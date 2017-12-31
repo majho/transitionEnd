@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transition End</title>
+
+    <style>
+    * { box-sizing: border-box; }
+    html { font-family: sans-serif; }
+    body { margin: 0; }
+
+    .btn {
+        padding: 0.5em 0.75em;
+        color: #fff;
+        background-color: #222;
+        background-image: linear-gradient(rgba(255,255,255,0.25), transparent);
+        display: inline-block;
+        border-radius: 0.2em;
+        box-shadow: 0 0.1em 0.6em 0 rgba(0,0,0,0.3);
+        cursor: pointer;
+    }
+
+    [type="checkbox"]:checked + .btn {
+        background-color: #444;
+    }
+
+    .visuallyhidden {
+        margin: -1px;
+        padding: 0;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        border: 0;
+        position: absolute;
+        white-space: nowrap;
+    }
+
+    .section {
+        margin: 0 auto;
+        padding: 1em;
+        max-width: 48em;
+    }
+
+    .single {
+        margin-top: 1em;
+        opacity: 0;
+        transition: opacity 0.2s ease-out;
+    }
+
+    [type="checkbox"]:checked ~ .single {
+        opacity: 1;
+    }
+
+    .multi {
+        margin-top: 1em;
+        color: white;
+        background-color: rebeccapurple;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition:
+            transform 1s ease-out,
+            background-color 0.5s 0.1s ease-in-out,
+            border-top-right-radius 0.3s 0.5s,
+            border-bottom-right-radius 0.3s 0.5s,
+            border-bottom-left-radius 0.3s 0.5s,
+            border-top-left-radius 0.3s 0.5s;
+    }
+
+    [type="checkbox"]:checked ~ .multi {
+        transform: rotate(1turn);
+        background-color: darkslateblue;
+        border-radius: 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="section">
+        <input type="checkbox" id="single" class="visuallyhidden">
+        <label for="single" class="btn">Toggle single</label>
+        <div class="single">Single</div>
+    </div>
+
+    <div class="section">
+        <input type="checkbox" id="multi" class="visuallyhidden">
+        <label for="multi" class="btn">Toggle multi</label>
+        <div class="multi">
+            <span>Multi</span>
+        </div>
+    </div>
+
+    <script src="../dist/transition-end.js"></script>
+    <script>
+    const single = document.querySelector('.single');
+    const multi = document.querySelector('.multi');
+
+    onTransitionEnd(single, () => console.log('single transition end'));
+    onTransitionEnd(multi,  () => console.log('multi transition end'));
+    </script>
+
+</body>
+</html>
