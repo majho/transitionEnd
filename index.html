@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Transition end</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="src/index.js"></script>
-  </body>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+    <div class="section">
+        <input type="checkbox" id="single" class="visuallyhidden">
+        <label for="single" class="btn">Toggle single</label>
+        <div class="single">Single</div>
+    </div>
+
+    <div class="section">
+        <input type="checkbox" id="multi" class="visuallyhidden">
+        <label for="multi" class="btn">Toggle multi</label>
+        <div class="multi">
+            <span>Multi</span>
+        </div>
+    </div>
+
+    <script type="module" src="./src/index.js"></script>
+</body>
 </html>
