@@ -1,34 +1,25 @@
 {
   "name": "transition-end",
-  "version": "0.1.0",
-  "description": "Tiny transitionEnd event helper",
-  "module": "src/index.js",
+  "version": "0.0.0",
+  "files": ["lib"],
+  "main": "./lib/transition-end.umd.js",
+  "module": "./lib/transition-end.es.js",
+  "exports": {
+    ".": {
+      "import": "./lib/transition-end.es.js",
+      "require": "./lib/transition-end.umd.js"
+    }
+  },
   "scripts": {
-    "lint": "eslint src",
-    "clean": "rm -rf dist",
-    "bundle": "rollup -c",
-    "minify": "uglifyjs dist/transition-end.js -o dist/transition-end.js --compress --mangle",
-    "build": "npm run lint && npm run clean && npm run bundle && npm run minify",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint": "eslint src/**.js"
   },
-  "keywords": [
-    "transition",
-    "transition event",
-    "transitionEnd"
-  ],
-  "author": {
-    "name": "Martin Johansson",
-    "url": "http://majho.se/"
-  },
-  "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^11.3.2",
-    "eslint-plugin-import": "^2.8.0",
-    "rollup": "^0.47.6",
-    "rollup-plugin-babel": "^3.0.2",
-    "uglify-js": "^3.0.27"
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "vite": "^2.5.4"
   }
 }
