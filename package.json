@@ -1,6 +1,6 @@
 {
   "name": "transition-end",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "files": ["lib"],
   "main": "./lib/transition-end.umd.js",
   "module": "./lib/transition-end.es.js",
