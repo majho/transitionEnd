@@ -1,6 +1,6 @@
 import { createCounter } from './counter';
 
-export function onTransitionEnd(el, fn) {
+export function transitionEnd(el, fn) {
     const count = createCounter();
 
     function onStart(e) {
