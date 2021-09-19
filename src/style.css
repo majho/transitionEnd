@@ -59,10 +59,7 @@ body { margin: 0; }
     transition:
         transform 1s ease-out,
         background-color 0.5s 0.1s ease-in-out,
-        border-top-right-radius 0.3s 0.5s,
-        border-bottom-right-radius 0.3s 0.5s,
-        border-bottom-left-radius 0.3s 0.5s,
-        border-top-left-radius 0.3s 0.5s;
+        border-radius 0.3s 0.5s;
 }
 
 [type="checkbox"]:checked ~ .multi {
